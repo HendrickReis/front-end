@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/cadastro.css">
+    <title>{{titulo}}</title>
+</head>
+<body>
+<main>
+  <h1>Cadastre-se bem aqui!</h1>
+<form class="cadastro" enctype="multipart/form-data">
+  <div class="name__area">
+    Nome: <br> <input type="text" name="nome" class="input__name" required>
+  </div>
+  <div class="image__area">
+    Ícone do perfil: <br>
+    <label for="image" class="opn__image">Escolher arquivo</label>
+    <input type="file" id="image" class="input__image" name="imagem" hidden required>
+  </div>
+  <div class="button__area">
+    <button type="submit" id="enviar">terminado</button>
+  </div>
+</form>
+
+</main>
+
+  <script src='/cadastro.js'></script>
+</body>
+</html>
