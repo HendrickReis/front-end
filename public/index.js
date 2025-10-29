@@ -17,8 +17,8 @@ const variaveis = {
 //   variaveis.perfilDisplay.style.left = "60%";
 // };
 
-if (localStorage.getItem("nome") === "" || localStorage.getItem("imagem") === "") {
-  window.location.href = "http://localhost:8080/cadastro"
+if (!localStorage.getItem("nome") || !localStorage.getItem("imagem")) {
+  window.location.href = "/cadastro";
 }
 
 const nome = localStorage.getItem("nome");
@@ -31,7 +31,7 @@ document.querySelector(".messageTime").textContent =
   const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   const socket = new WebSocket(`${protocol}//${window.location.host}`);
 
-  server.onmessage = (event) => {
+  socket.onmessage = (event) => {
     const data = JSON.parse(event.data);
 
     const div = document.createElement("div");
