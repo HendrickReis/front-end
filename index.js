@@ -18,6 +18,10 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(dirname, 'views'));
 
 app.use(cors({ origin: /localhost:\d+/ }));
+app.get('*.css', (req, res, next) => {
+  res.type('text/css');
+  next();
+});
 app.use(express.static(path.join(dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
