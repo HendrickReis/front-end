@@ -28,7 +28,8 @@ const imagem = localStorage.getItem("imagem");
 document.querySelector(".messageTime").textContent =
   `${String(new Date().getHours()).padStart(2, "0")}:${String(new Date().getMinutes()).padStart(2, "0")}`;
 
-const server = new WebSocket(`ws://${location.host}`);
+  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const socket = new WebSocket(`${protocol}//${window.location.host}`);
 
   server.onmessage = (event) => {
     const data = JSON.parse(event.data);
