@@ -61,7 +61,7 @@ document.addEventListener("keydown", (e) => {
       conteudo: variaveis.input.value.trim(),
       hora: new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
     }
-    server.send(JSON.stringify(mensagem));
+    socket.send(JSON.stringify(mensagem));
     variaveis.input.value = "";
   }
 });
